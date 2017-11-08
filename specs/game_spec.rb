@@ -9,9 +9,11 @@ class TestGame < MiniTest::Test
 def setup
   @word = Word.new("cat")
   @word2 = Word.new("sheep")
+  @word3 = Word.new("cat sheep")
   @player = Player.new("Bob")
   @game = Game.new(@player, @word)
   @game2 = Game.new(@player, @word2)
+  @game3 = Game.new(@player, @word3)
 end
 
 def test_correct_guess_letter
@@ -43,6 +45,11 @@ end
 def test_showing_word_b
   @game.guess_letter("b")
   assert_equal("***", @game.showing_word)
+end
+
+def test_showing_word_c
+  @game3.guess_letter("c")
+  assert_equal("c** *****", @game3.showing_word)
 end
 
 def test_showing_word_abcd

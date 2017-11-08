@@ -21,6 +21,8 @@ def showing_word
   for letter in @word.game_word
     if @letters.include?(letter)
       showing_word << letter
+    elsif letter == " "
+      showing_word << " "
     else
       showing_word << "*"
     end
