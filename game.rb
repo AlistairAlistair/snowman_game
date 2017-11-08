@@ -11,7 +11,7 @@ end
 
 def guess_letter(letter)
   @letters << letter
-  @game.win_game if @word.game_word.subset?(@letters)
+  return "Well done" if !showing_word.include?("*")
   @player.remove_life if !@word.game_word.include?(letter)
 end
 
@@ -29,7 +29,7 @@ end
 
 def win_game
   winning_word = @word.game_word.join
-  return "Well done, the word was #{winning_word}"
+
 end
 
 
