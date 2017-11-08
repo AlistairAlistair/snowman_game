@@ -13,6 +13,7 @@ def guess_letter(letter)
   @letters << letter
   return "Well done" if !showing_word.include?("*")
   @player.remove_life if !@word.game_word.include?(letter)
+  return "Game Over" if @player.lives == 0
 end
 
 def showing_word

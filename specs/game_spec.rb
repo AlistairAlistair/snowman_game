@@ -45,7 +45,7 @@ def test_showing_word_b
   assert_equal("***", @game.showing_word)
 end
 
-def test_showing_word_abc
+def test_showing_word_abcd
   @game.guess_letter("a")
   @game.guess_letter("b")
   @game.guess_letter("c")
@@ -57,18 +57,35 @@ def test_showing_word_abc
 
 end
 
-def test_showing_word_abc
+def test_showing_word_shep
   @game2.guess_letter("s")
   @game2.guess_letter("h")
   @game2.guess_letter("e")
   @game2.guess_letter("r")
   # @game.guess_letter("t")
-  assert_equal("she**", @game2.showing_word)
+  assert_equal("shee*", @game2.showing_word)
   assert_equal(5, @player.lives)
   assert_equal("Well done", @game2.guess_letter("p"))
 
 end
 
+def test_showing_word_abcdef
+  @game2.guess_letter("a")
+  @game2.guess_letter("b")
+  @game2.guess_letter("c")
+  @game2.guess_letter("d")
+  @game2.guess_letter("e")
+  @game2.guess_letter("f")
+  #@game2.guess_letter("g")
+
+  # @game.guess_letter("t")
+  assert_equal("**ee*", @game2.showing_word)
+  assert_equal(1, @player.lives)
+
+  assert_equal("Game Over", @game2.guess_letter("z"))
+  #assert_equal("Well done", @game2.guess_letter("p"))
+
+end
 
 
 
