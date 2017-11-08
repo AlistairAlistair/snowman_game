@@ -5,9 +5,4 @@ class Word
     @game_word = game_word.split(//)
   end
 
-  # def asterix_word
-  #   "*" * game_word.length
-  # end
-
-
 end

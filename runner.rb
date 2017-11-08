@@ -22,9 +22,9 @@ until word == game.showing_word || player.lives == 0
 
   puts "Guess a letter:"
   letter = gets.chomp
-
-  p game.guess_letter(letter)
   puts `clear`
+  puts game.guess_letter(letter)
+
   puts game.showing_word
   # game.game_over if player.lives == 0
 
@@ -32,4 +32,4 @@ until word == game.showing_word || player.lives == 0
 
 end
 
-p "The word was #{word}"
+puts "The word was #{word}"
